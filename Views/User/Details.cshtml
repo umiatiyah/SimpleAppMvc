@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Users";
+}
+@model SimpleAppMvc.Models.UserModel 
+<div class="container">
+    <div class="row">
+        <h4>
+            User Details
+        </h4>
+    </div>
+    <form asp-action="Index">
+        <input type="hidden" class="form-control" id="id" name="id" asp-for="Id">
+        <div class="form-group row mb-3">
+            <label for="username" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="username" name="username" asp-for="UserName" readonly>
+            </div>
+        </div>
+        <div class="form-group row mb-3">
+            <label for="firstname" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="firstname" name="firstname" asp-for="FirstName" readonly>
+            </div>
+        </div>
+        <div class="form-group row mb-3">
+            <label for="lastname" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="lastname" name="lastname" asp-for="LastName" readonly>
+            </div>
+        </div>
+        <div class="form-group row mb-3">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-6">
+                <input type="email" class="form-control" id="email" name="email" asp-for="Email" readonly>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2">
+                <button class="form-control btn btn-sm btn-primary" type="submit">Back</button>
+            </div>
+        </div>
+    </form>
+</div>

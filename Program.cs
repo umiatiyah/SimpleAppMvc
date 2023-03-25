@@ -1,4 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using SimpleAppMvc.Data;
+using SimpleAppMvc.Interface;
+using SimpleAppMvc.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<SimpleAppMvcContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IUserInterface, UserRepository>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
